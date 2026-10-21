@@ -13,8 +13,9 @@ Includes an **optional Doctrine DBAL adapter** for transactional bookings on
 MariaDB/InnoDB. No database, framework or external library is needed for the
 calculation itself.
 
-**Status: development / unreleased.** API and database schema may change before
-the first stable release. This repository is not yet published on Packagist.
+**Status: stable v1.0.0.** The public calculation API follows semantic versioning.
+The Doctrine adapter is optional and deliberately tied to the documented MariaDB schema.
+See [release scope and compatibility contract](docs/RELEASE.md).
 
 ## Example: find bookable times
 
@@ -92,9 +93,14 @@ reservations within a query, with O(C + R) memory.
 - Optional transactional adapter: **Doctrine DBAL 4.3+** and **MariaDB/InnoDB**.
 - Symfony is **not** required.
 
-This package is **not yet on Packagist**. For now, clone the repository and run
-`composer install` locally. A normal `composer require alkin/capacity-availability`
-command will be documented once a version is published.
+After Packagist registration, install with:
+
+```bash
+composer require alkin/capacity-availability:^1.0
+```
+
+Until then, install from the Git repository using a Composer VCS repository.
+The v1.0.0 Git tag is the canonical release source; Packagist publication is separate.
 
 ## Optional Doctrine / MariaDB booking writer
 
