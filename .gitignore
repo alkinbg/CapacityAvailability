@@ -1,0 +1,10 @@
+/vendor/
+/.phpunit.cache/
+/coverage/
+/.idea/
+/.phpactor.json
+/.env.local
+/.env.*.local
+*.sqlite
+*.sqlite3
+.DS_Store
