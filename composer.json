@@ -1,0 +1,27 @@
+{
+    "name": "alkin/capacity-availability",
+    "description": "Calculate continuous capacity availability from overlapping reservations, with optional Doctrine DBAL booking support",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["availability", "capacity", "booking", "scheduling", "reservations", "doctrine", "sweep-line"],
+    "authors": [{"name": "Alkin Fehim", "email": "alkinbg@gmail.com"}],
+    "require": {"php": "^8.2"},
+    "require-dev": {
+        "doctrine/dbal": "^4.3",
+        "phpunit/phpunit": "^10.5 || ^11.5 || ^12.0",
+        "phpstan/phpstan": "^2.1"
+    },
+    "suggest": {
+        "doctrine/dbal": "Required only for the optional MariaDB transactional booking adapter"
+    },
+    "autoload": {"psr-4": {"Alkin\\CapacityAvailability\\": "src/"}},
+    "autoload-dev": {"psr-4": {"Alkin\\CapacityAvailability\\Tests\\": "tests/"}},
+    "scripts": {
+        "test": "phpunit --testsuite Unit",
+        "test:reference": "@php tests/reference_check.php",
+        "test:all": ["@test", "@test:reference"],
+        "analyse": "phpstan analyse --no-progress"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
